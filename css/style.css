@@ -5132,3 +5132,72 @@ section {
     }
 
 }
+/* =========================================================
+   LANGUAGE SWITCHER
+========================================================= */
+
+.language-switcher {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-left: 25px;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.language-switcher span {
+
+    color: #475569;
+
+}
+
+
+.language-btn {
+
+    border: none;
+
+    background: transparent;
+
+    color: #64748b;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    padding: 5px 3px;
+
+    transition:
+        color 0.3s ease,
+        text-shadow 0.3s ease;
+
+}
+
+
+.language-btn:hover {
+
+    color: #cbd5e1;
+
+}
+
+
+.language-btn.active {
+
+    color: var(--blue-light);
+
+    text-shadow:
+        0 0 12px
+        rgba(56, 189, 248, 0.5);
+
+}
