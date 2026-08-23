@@ -182,7 +182,7 @@ body {
 
     align-items: center;
 
-    padding: 120px 7% 80px;
+    padding: 100px 7% 80px;
 
     overflow: hidden;
 
@@ -598,7 +598,8 @@ body {
 
     position: relative;
 
-    padding: 140px 7%;
+    padding: 30px 7% ;
+    min-height: 100vh;
 
     background:
 
@@ -1509,6 +1510,8 @@ footer {
 
         padding: 0 5%;
 
+        opacity: 0.8;
+
     }
 
     .nav-links {
@@ -1553,7 +1556,7 @@ footer {
 
     .hero {
 
-        padding: 120px 5% 80px;
+        padding: 100px 5% 80px;
 
     }
 
@@ -1700,7 +1703,7 @@ footer {
 
     position: relative;
 
-    padding: 140px 7%;
+    padding: 30px 7%;
 
     overflow: hidden;
 
@@ -2335,7 +2338,7 @@ footer {
 
     .experiences-section {
 
-        padding: 100px 5%;
+        padding: 30px 5%;
 
     }
 
@@ -2382,7 +2385,7 @@ footer {
 
     min-height: 100vh;
 
-    padding: 120px 7% 60px;
+    padding: 30px 7% 20px;
 
     display: flex;
 
@@ -3103,8 +3106,8 @@ footer {
     .contact-section {
         min-height: 100vh;
         padding:
-            110px 5%
-            50px;
+            70px 5%
+            30px;
     }
     .contact-content {
 
@@ -3226,7 +3229,7 @@ footer {
 
     min-height: 100vh;
 
-    padding: 140px 7% 100px;
+    padding: 30px 7% 70px;
 
     overflow: hidden;
 
@@ -3837,7 +3840,7 @@ footer {
     .skills-section {
 
         padding:
-            110px 5% 80px;
+            90px 5% 70px;
 
     }
 
@@ -3885,7 +3888,7 @@ footer {
 
     min-height: 100vh;
 
-    padding: 140px 7% 110px;
+    padding: 30px 7%;
 
     overflow: hidden;
 
@@ -5013,7 +5016,7 @@ footer {
     .projects-section {
 
         padding:
-            110px 5% 80px;
+            30px 5%;
 
     }
 
@@ -5115,6 +5118,8 @@ footer {
 section {
 
     position: relative;
+
+    padding: 30px 7%;
 
 }
 
