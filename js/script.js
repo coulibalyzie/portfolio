@@ -337,3 +337,50 @@ if (skillCards.length) {
     });
 
 }
+/* =========================================================
+   ANIMATION REALISATIONS
+========================================================= */
+
+const projectCards =
+    document.querySelectorAll(".project-card");
+
+
+if (projectCards.length) {
+
+    const projectsObserver =
+        new IntersectionObserver(
+
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add(
+                            "visible"
+                        );
+
+                        projectsObserver.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.12
+            }
+
+        );
+
+
+    projectCards.forEach(card => {
+
+        projectsObserver.observe(card);
+
+    });
+
+}
