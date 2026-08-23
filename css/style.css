@@ -5206,3 +5206,80 @@ section {
         rgba(56, 189, 248, 0.5);
 
 }
+.cv-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+}
+
+.cv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 18px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 11px;
+    letter-spacing: 0.5px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.cv-download {
+    color: #f8fafc;
+
+    background:
+        rgba(37, 99, 235, 0.18);
+
+    border:
+        1px solid
+        rgba(56, 189, 248, 0.4);
+}
+
+.cv-preview {
+    color: #94a3b8;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    border:
+        1px solid
+        rgba(148, 163, 184, 0.2);
+}
+
+.cv-icon {
+    color: var(--blue-light);
+    font-size: 16px;
+}
+
+.cv-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.25);
+}
+
+.cv-download:hover {
+    background:
+        rgba(37, 99, 235, 0.28);
+
+    border-color:
+        var(--blue-light);
+}
+
+.cv-preview:hover {
+    color: #f8fafc;
+
+    border-color:
+        rgba(56, 189, 248, 0.35);
+}
