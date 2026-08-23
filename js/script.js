@@ -290,3 +290,50 @@ if (contactSection) {
     contactObserver.observe(contactSection);
 
 }
+/* =========================================================
+   ANIMATION COMPETENCES
+========================================================= */
+
+const skillCards =
+    document.querySelectorAll(".skill-card");
+
+
+if (skillCards.length) {
+
+    const skillsObserver =
+        new IntersectionObserver(
+
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add(
+                            "visible"
+                        );
+
+                        skillsObserver.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.12
+            }
+
+        );
+
+
+    skillCards.forEach(card => {
+
+        skillsObserver.observe(card);
+
+    });
+
+}
