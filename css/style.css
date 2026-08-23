@@ -606,9 +606,7 @@ body {
             circle at 50% 30%,
             rgba(37,99,235,0.07),
             transparent 35%
-        ),
-
-        var(--bg);
+        );
 
 }
 
@@ -1704,8 +1702,6 @@ footer {
 
     padding: 140px 7%;
 
-    background: rgba(5, 11, 24, 0.65);
-
     overflow: hidden;
 
 }
@@ -2401,9 +2397,7 @@ footer {
             circle at 50% 45%,
             rgba(5, 11, 24, 0.65),
             transparent 40%
-        ),
-
-        var(--bg);
+        );
 
 }
 
@@ -2473,8 +2467,6 @@ footer {
     top: 5%;
     left: 8%;
 
-    background: rgba(5, 11, 24, 0.65);
-
 }
 
 
@@ -2485,8 +2477,6 @@ footer {
 
     bottom: 5%;
     right: 8%;
-
-    background: rgba(5, 11, 24, 0.65);
 
 }
 /* =========================================================
@@ -3240,8 +3230,6 @@ footer {
 
     overflow: hidden;
 
-    background: var(--bg);
-
 }
 
 
@@ -3307,8 +3295,6 @@ footer {
     top: 15%;
     left: -150px;
 
-    background: #1d4ed8;
-
 }
 
 
@@ -3319,9 +3305,6 @@ footer {
 
     right: -150px;
     bottom: 10%;
-
-    background: #0284c7;
-
 }
 
 
@@ -3906,8 +3889,6 @@ footer {
 
     overflow: hidden;
 
-    background: var(--bg);
-
 }
 
 
@@ -3973,8 +3954,6 @@ footer {
     top: 10%;
     left: -200px;
 
-    background: #1d4ed8;
-
 }
 
 
@@ -3985,8 +3964,6 @@ footer {
 
     right: -200px;
     bottom: 5%;
-
-    background: #0284c7;
 
 }
 
@@ -5080,6 +5057,77 @@ footer {
         flex-direction: column;
 
         gap: 15px;
+
+    }
+
+}
+/* =========================================================
+   GLOBAL ANIMATED BACKGROUND
+========================================================= */
+
+#global-background {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: -10;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   BACKGROUND VIGNETTE
+========================================================= */
+
+.background-vignette {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -9;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            transparent 20%,
+            rgba(3, 7, 18, 0.25) 65%,
+            rgba(3, 7, 18, 0.75) 100%
+        );
+
+}
+
+
+/* =========================================================
+   IMPORTANT
+   Les sections doivent rester transparentes
+   pour laisser apparaître le background.
+========================================================= */
+
+section {
+
+    position: relative;
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    #global-background {
+
+        display: none;
 
     }
 
