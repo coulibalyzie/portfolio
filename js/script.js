@@ -1143,3 +1143,107 @@ animate();
        Javascript pour les langues
     ----------------------------------------- */
 
+const languageButtons =
+    document.querySelectorAll(".language-btn");
+
+
+let currentLanguage =
+    localStorage.getItem("portfolio-language")
+    || "fr";
+
+
+function changeLanguage(language) {
+
+    if (!translations[language])
+        return;
+
+
+    /* -----------------------------------------
+       Traduction des éléments
+    ----------------------------------------- */
+
+    document
+        .querySelectorAll("[data-i18n]")
+        .forEach(element => {
+
+            const key =
+                element.dataset.i18n;
+
+
+            if (
+                translations[language][key]
+            ) {
+
+                element.textContent =
+                    translations[language][key];
+
+            }
+
+        });
+
+
+    /* -----------------------------------------
+       Bouton actif
+    ----------------------------------------- */
+
+    languageButtons.forEach(button => {
+
+        button.classList.toggle(
+            "active",
+            button.dataset.lang === language
+        );
+
+    });
+
+
+    /* -----------------------------------------
+       Attribut HTML
+    ----------------------------------------- */
+
+    document.documentElement.lang =
+        language;
+
+
+    /* -----------------------------------------
+       Sauvegarde
+    ----------------------------------------- */
+
+    localStorage.setItem(
+        "portfolio-language",
+        language
+    );
+
+
+    currentLanguage =
+        language;
+
+}
+
+
+/* =========================================================
+   EVENTS
+========================================================= */
+
+languageButtons.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            changeLanguage(
+                button.dataset.lang
+            );
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   INITIALISATION
+========================================================= */
+
+changeLanguage(
+    currentLanguage
+);
