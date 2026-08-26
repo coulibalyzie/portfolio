@@ -5329,3 +5329,273 @@ section {
     }
 
 }
+
+/* =====================================================
+   CERTIFICATIONS
+===================================================== */
+
+.certifications-section {
+    margin-top: 70px;
+    padding-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* ===============================
+   HEADER
+================================ */
+
+.certifications-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 50px;
+    margin-bottom: 35px;
+}
+
+
+.certifications-label {
+    margin: 0 0 10px;
+
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    font-weight: 600;
+
+    opacity: 0.55;
+}
+
+
+.certifications-header h3 {
+    margin: 0;
+
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+
+.certifications-header h3 strong {
+    display: block;
+    font-weight: 700;
+}
+
+
+.certifications-intro {
+    max-width: 400px;
+
+    margin: 0;
+
+    font-size: 0.95rem;
+    line-height: 1.7;
+
+    opacity: 0.55;
+}
+
+
+/* ===============================
+   GRID
+================================ */
+
+.certifications-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* ===============================
+   CARD
+================================ */
+
+.certification-card {
+    position: relative;
+
+    min-height: 260px;
+
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.certification-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(255, 255, 255, 0.2);
+
+    background: rgba(255, 255, 255, 0.045);
+}
+
+
+/* ===============================
+   TOP
+================================ */
+
+.certification-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.certification-number {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    opacity: 0.4;
+}
+
+
+.certification-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+
+    font-size: 0.9rem;
+
+    opacity: 0.7;
+}
+
+
+/* ===============================
+   CONTENT
+================================ */
+
+.certification-content {
+    margin-top: 35px;
+}
+
+
+.certification-type {
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+
+    opacity: 0.4;
+}
+
+
+.certification-content h4 {
+    margin: 10px 0 6px;
+
+    font-size: 1.25rem;
+    line-height: 1.25;
+
+    font-weight: 600;
+}
+
+
+.certification-content p {
+    margin: 0;
+
+    font-size: 0.85rem;
+    line-height: 1.5;
+
+    opacity: 0.5;
+}
+
+
+/* ===============================
+   FOOTER
+================================ */
+
+.certification-footer {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 30px;
+    padding-top: 16px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+.certification-format {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+
+    opacity: 0.35;
+}
+
+
+.certification-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    text-decoration: none;
+
+    font-size: 0.78rem;
+    font-weight: 600;
+
+    color: inherit;
+
+    transition: gap 0.25s ease;
+}
+
+
+.certification-link:hover {
+    gap: 12px;
+}
+
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+
+    .certifications-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .certifications-intro {
+        max-width: 600px;
+    }
+
+    .certifications-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .certifications-section {
+        margin-top: 50px;
+        padding-top: 35px;
+    }
+
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certification-card {
+        min-height: 230px;
+    }
+
+}
