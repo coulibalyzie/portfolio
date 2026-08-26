@@ -1142,108 +1142,76 @@ animate();
 /* -----------------------------------------
        Javascript pour les langues
     ----------------------------------------- */
-
-const languageButtons =
-    document.querySelectorAll(".language-btn");
-
+/* =========================================================
+   LANGUAGE SYSTEM
+========================================================= */
 
 let currentLanguage =
-    localStorage.getItem("portfolio-language")
-    || "fr";
+    localStorage.getItem("language") || "fr";
 
 
-function changeLanguage(language) {
-
-    if (!translations[language])
-        return;
-
-
-    /* -----------------------------------------
-       Traduction des éléments
-    ----------------------------------------- */
+function translatePage(language) {
 
     document
-        .querySelectorAll("[data-i18n]")
+        .querySelectorAll("[data-fr][data-en]")
         .forEach(element => {
 
-            const key =
-                element.dataset.i18n;
-
-
-            if (
-                translations[language][key]
-            ) {
-
-                element.textContent =
-                    translations[language][key];
-
-            }
+            element.textContent =
+                element.dataset[language];
 
         });
 
-
-    /* -----------------------------------------
-       Bouton actif
-    ----------------------------------------- */
-
-    languageButtons.forEach(button => {
-
-        button.classList.toggle(
-            "active",
-            button.dataset.lang === language
-        );
-
-    });
-
-
-    /* -----------------------------------------
-       Attribut HTML
-    ----------------------------------------- */
 
     document.documentElement.lang =
         language;
 
 
-    /* -----------------------------------------
-       Sauvegarde
-    ----------------------------------------- */
-
     localStorage.setItem(
-        "portfolio-language",
+        "language",
         language
     );
 
 
-    currentLanguage =
-        language;
+    /* Bouton actif */
+
+    document
+        .querySelectorAll(".language-btn")
+        .forEach(button => {
+
+            button.classList.toggle(
+                "active",
+                button.dataset.language === language
+            );
+
+        });
 
 }
 
 
 /* =========================================================
-   EVENTS
+   LANGUAGE BUTTONS
 ========================================================= */
 
-languageButtons.forEach(button => {
+document
+    .querySelectorAll(".language-btn")
+    .forEach(button => {
 
-    button.addEventListener(
-        "click",
-        () => {
+        button.addEventListener(
+            "click",
+            () => {
 
-            changeLanguage(
-                button.dataset.lang
-            );
+                translatePage(
+                    button.dataset.language
+                );
 
-        }
-    );
+            }
+        );
 
-});
+    });
 
 
 /* =========================================================
-   INITIALISATION
+   INITIALIZATION
 ========================================================= */
 
-changeLanguage(
-    currentLanguage
-);
+translatePage(currentLanguage);
