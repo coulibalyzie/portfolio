@@ -1158,8 +1158,8 @@ body {
 
 .current-badge span {
 
-    width: 6px;
-    height: 6px;
+    width: 15px;
+    height: 15px;
 
     border-radius: 50%;
 
@@ -5302,4 +5302,30 @@ section {
 
     border-color:
         rgba(56, 189, 248, 0.35);
+}
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.7);
+    animation: statusPulse 1.8s infinite;
+}
+
+@keyframes statusPulse {
+
+    0% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+    }
+
+    70% {
+        box-shadow: 0 0 0 7px rgba(34, 197, 94, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
+
 }
