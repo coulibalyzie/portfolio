@@ -5717,11 +5717,11 @@ section {
     .social-actions {
         flex-direction: column;
 
-        width: 70%;
+        width: 50%;
     }
 
     .social-btn {
-        width: 70%;
+        width: 50%;
     }
 
 }
