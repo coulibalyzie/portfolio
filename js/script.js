@@ -13,7 +13,7 @@ menuBtn.addEventListener("click", () => {
 
 
 /* =========================================================
-   FERMER LE MENU APRÈS UN CLIC
+   FERMER LE MENU APRÈS UN CLIC SUR UN LIEN
 ========================================================= */
 
 document.querySelectorAll(".nav-links a").forEach(link => {
@@ -23,6 +23,32 @@ document.querySelectorAll(".nav-links a").forEach(link => {
         navLinks.classList.remove("show");
 
     });
+
+});
+
+
+/* =========================================================
+   FERMER LE MENU EN CLIQUANT À L'EXTÉRIEUR
+========================================================= */
+
+document.addEventListener("click", (event) => {
+
+    // Si le menu n'est pas ouvert, rien à faire
+    if (!navLinks.classList.contains("show")) {
+        return;
+    }
+
+    // Si on clique sur le bouton menu OU dans le menu,
+    // on ne ferme pas ici
+    if (
+        menuBtn.contains(event.target) ||
+        navLinks.contains(event.target)
+    ) {
+        return;
+    }
+
+    // Sinon : clic à l'extérieur → fermeture
+    navLinks.classList.remove("show");
 
 });
 
@@ -187,33 +213,50 @@ updateJourneyProgress();
    PETIT EFFET SUR LE HERO
 ========================================================= */
 
+/* =========================================================
+   EFFET PARALLAX DU HERO
+========================================================= */
+
 const heroVisual =
-    document.querySelector(".hero-visual");
+    document.querySelector(".hero-new-visual");
+
+const heroSection =
+    document.querySelector(".hero-new");
 
 
-window.addEventListener("mousemove", (event) => {
+if (heroVisual && heroSection) {
 
-    if (!heroVisual) {
-        return;
-    }
+    window.addEventListener("mousemove", (event) => {
 
-    if (window.innerWidth < 1000) {
-        return;
-    }
+        // Désactiver sur tablette / téléphone
+        if (window.innerWidth < 1000) {
+            return;
+        }
 
-    const x =
-        (window.innerWidth / 2 - event.clientX)
-        / 80;
+        const rect =
+            heroSection.getBoundingClientRect();
 
-    const y =
-        (window.innerHeight / 2 - event.clientY)
-        / 80;
+        // Position de la souris par rapport au centre
+        const mouseX =
+            event.clientX -
+            (rect.left + rect.width / 2);
+
+        const mouseY =
+            event.clientY -
+            (rect.top + rect.height / 2);
 
 
-    heroVisual.style.transform =
-        `translateY(-50%) translate(${x}px, ${y}px)`;
+        // Intensité du mouvement
+        const moveX = mouseX / 90;
+        const moveY = mouseY / 90;
 
-});
+
+        heroVisual.style.transform =
+            `translate(${moveX}px, ${moveY}px)`;
+
+    });
+
+}
 /* =========================================================
    ANIMATION DES EXPERIENCES
 ========================================================= */
