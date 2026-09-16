@@ -1258,3 +1258,94 @@ document
 ========================================================= */
 
 translatePage(currentLanguage);
+
+/* =========================================================
+   MODE SOMBRE / MODE CLAIR
+========================================================= */
+
+const themeToggle =
+    document.getElementById("themeToggle");
+
+const themeIcon =
+    document.querySelector(".theme-icon");
+
+
+/* ---------------------------------------------------------
+   THÈME SAUVEGARDÉ
+--------------------------------------------------------- */
+
+let currentTheme =
+    localStorage.getItem("portfolio-theme")
+    || "dark";
+
+
+/* ---------------------------------------------------------
+   APPLICATION DU THÈME
+--------------------------------------------------------- */
+
+function applyTheme(theme) {
+
+    document.body.classList.toggle(
+        "light-theme",
+        theme === "light"
+    );
+
+    if (theme === "light") {
+
+        themeIcon.textContent = "☾";
+
+        themeToggle.setAttribute(
+            "aria-label",
+            "Activer le mode sombre"
+        );
+
+        themeToggle.setAttribute(
+            "title",
+            "Passer au mode sombre"
+        );
+
+    } else {
+
+        themeIcon.textContent = "☀";
+
+        themeToggle.setAttribute(
+            "aria-label",
+            "Activer le mode clair"
+        );
+
+        themeToggle.setAttribute(
+            "title",
+            "Passer au mode clair"
+        );
+    }
+
+    localStorage.setItem(
+        "portfolio-theme",
+        theme
+    );
+}
+
+
+/* ---------------------------------------------------------
+   BOUTON
+--------------------------------------------------------- */
+
+themeToggle.addEventListener(
+    "click",
+    () => {
+
+        currentTheme =
+            currentTheme === "dark"
+                ? "light"
+                : "dark";
+
+        applyTheme(currentTheme);
+    }
+);
+
+
+/* ---------------------------------------------------------
+   INITIALISATION
+--------------------------------------------------------- */
+
+applyTheme(currentTheme);
