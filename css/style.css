@@ -33,7 +33,7 @@ body.light-theme {
     --text-main: #0f172a;
     --text-secondary: #475569;
 
-    --card-bg: rgba(255, 255, 255, 0.88);
+    --card-bg: rgba(255, 255, 255, 0.683);
     --card-border: rgba(15, 23, 42, 0.12);
 
     --accent: #0284c7;
@@ -3006,7 +3006,6 @@ footer {
 
 }
 
-
 .skills-header h2 {
 
     max-width: 800px;
@@ -3295,7 +3294,7 @@ footer {
 
     margin-bottom: 20px;
 
-    color: #f1f5f9;
+    color: var(--text-secondary);
 
     font-size: 21px;
 
@@ -4340,7 +4339,7 @@ footer {
 
     margin-top: 28px;
 
-    color: #f8fafc;
+    color: var(--text-secondary);
 
     font-size: 28px;
 
@@ -5445,7 +5444,7 @@ section {
     height: 350px;
 
     right: 8%;
-    top: 10%;
+    top: 5%;
 
     background: rgba(37, 99, 235, 0.16);
 }
@@ -5475,13 +5474,13 @@ section {
 
     grid-template-columns:
         minmax(0, 1fr)
-        minmax(480px, 0.85fr);
+        minmax(380px, 0.65fr);
 
     align-items: center;
 
     gap: 70px;
 
-    padding: 100px 0 80px;
+    padding: 40px 0 20px;
 }
 
 
@@ -6478,4 +6477,16 @@ body.light-theme .hero-terminal {
         display: none;
     }
 
+}
+.timeline-card,
+.experience-card,
+.project-card,
+.skill-card {
+    background: var(--card-bg);
+    border-color: var(--card-border);
+
+    transition:
+        background 0.4s ease,
+        border-color 0.4s ease,
+        color 0.4s ease;
 }
