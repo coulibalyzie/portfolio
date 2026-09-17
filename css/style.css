@@ -165,7 +165,7 @@ body {
     width: 0;
     height: 2px;
 
-    background: var(--nav-bg);
+    background: var(--blue-light);
 
     transition: 0.3s;
 
