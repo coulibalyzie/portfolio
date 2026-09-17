@@ -39,7 +39,7 @@ body.light-theme {
     --accent: #0284c7;
     --accent-blue: #2563eb;
 
-    --nav-bg: rgba(255, 255, 255, 0.88);
+    --nav-bg: rgba(214, 207, 207, 0.651);
 }
 
 /* =========================================================
@@ -99,7 +99,7 @@ body {
 
     z-index: 1000;
 
-    background: rgba(5, 11, 24, 0.65);
+    background: var(--nav-bg);
 
     backdrop-filter: blur(15px);
 
