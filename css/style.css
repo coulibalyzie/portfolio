@@ -182,7 +182,7 @@ body {
 
     display: none;
 
-    background: none;
+    background: var(--nav-bg);
     border: none;
 
     color: white;
